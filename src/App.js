@@ -9,11 +9,16 @@ import Map from './components/map'
 
 
 class App extends React.Component {
-state = {
-  reg: '',
-  start: '',
-  finish: ''
-}
+  state = {
+    reg: '',
+    start: '',
+    finish: ''
+  }
+
+  constructor(props) {
+    super(props)
+
+  }
 
 handleRegChange = (e) => this.setState({
   reg: e.target.value
@@ -27,6 +32,15 @@ handleEndChange = (e) => this.setState({
   end: e.target.value
 })
 
+displayPrice = () => {
+  const distance = 123;
+  const mpg = 42;
+  const gallons = distance / mpg;
+  const litresUsed = gallons / 4.5609;
+  const price = litresUsed * 1.2;
+  return price;
+}
+
   render() {
 
     return (
@@ -34,22 +48,25 @@ handleEndChange = (e) => this.setState({
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>Petty</h2>
+            <h1>Petty</h1>
             <p className="App-intro">
               Insert your number plate
             </p>
             <input type="text"
             onChange={this.handleRegChange}
             value={this.state.reg}
-            placeholder="REG"/> <button onClick={this.fetchMpg}>Search</button>
+            placeholder="REG"/>
+            <button onClick={this.fetchMpg}>Search</button>
             <p className="App-intro">
               Type in your <input type="text"
               onChange={this.handleStartChange}
               value={this.state.start}
-              placeholder="start"/> and <input type="text"
+              placeholder="start"/> and 
+              <input type="text"
               onChange={this.handleEndChange}
               value={this.state.end}
               placeholder="end"/> point
+              <button onClick={this.diplayPrice}>Go</button>
             </p>
           </div>
           <Map />
