@@ -8,7 +8,9 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.5",
+    "recompose": "^0.26.0",
     "redux": "^3.6.0"
   },
   "scripts": {
