@@ -8,9 +8,15 @@
 
 .App-header {
   background-color: #222;
-  height: 25%;
+  align: left;
+  width: 33%;
   padding: 10px;
   color: white;
+  height: 800px;
+}
+
+.Map {
+  align: right;
 }
 
 .App-intro {
@@ -20,4 +26,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+} 

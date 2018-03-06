@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import { compose, withProps } from "recompose";
 import { DirectionsRenderer } from "react-google-maps";
+import PlacesAutocomplete from 'react-places-autocomplete'
 
 export default class Map extends React.Component {
   render() {
@@ -9,7 +10,7 @@ export default class Map extends React.Component {
       withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `555px` }} />,
+        containerElement: <div style={{ height: `555px`, width: `700px` }} />,
         mapElement: <div style={{ height: `100%` }} />,
       }),
       withScriptjs,
@@ -23,7 +24,7 @@ export default class Map extends React.Component {
     </GoogleMap>
   )
     return (
-      <MyMapComponent />
+      <MyMapComponent style={{align: `right`}}/>
     )
   }
 }
